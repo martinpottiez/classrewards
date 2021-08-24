@@ -3,6 +3,7 @@
   <head>
     <title>ClassRewards</title>
     <meta charset="utf-8">
+    <?php if($rewrite){echo'<base href="../">';}?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="view/css/css.css" rel="stylesheet">
   </head>
@@ -15,10 +16,11 @@
           </a>
         </div>
         <div class="mt-20">
-          <form>
-            <input type="text" placeholder="Email" id="mail"/>
-            <input type="password" placeholder="Mot de passe" id="password"/>
-            <input type="submit" value="Connexion" id="login"/>
+          <div><?php if(isset($error)){echo $error;}?></div>
+          <form method="post" action="index/login">
+            <input type="text" placeholder="Email" name="mail"/>
+            <input type="password" placeholder="Mot de passe" name="password"/>
+            <input type="submit" value="Connexion" name="login"/>
           </form>
         </div>
       </div>
