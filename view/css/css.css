@@ -1,0 +1,102 @@
+html, body
+{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Box */
+
+.page
+{
+  height: 100%;
+}
+
+.logo
+{
+  width:100%;
+}
+
+.nav-col
+{
+  width: 20%;
+  min-width: 220px;
+}
+
+/* Forms */
+
+input
+{
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 5px 12px;
+  margin: 8px 0;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+}
+
+input[type="submit"]
+{
+  background-color: inherit;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+input[type="submit"]:hover
+{
+  background-color: #fff;
+  color: #7d52ea;
+}
+
+/* Flex-Box */
+
+.container
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-sb
+{
+  justify-content: space-between;
+}
+
+.alignc-start
+{
+  align-content: start;
+}
+
+/* Color & Backgrounds */
+
+.bg-primary
+{
+  background-color: #7d52ea;
+}
+
+.bg-darkPrimary
+{
+  background-color: #663399;
+}
+
+/* Padding & Margins */
+
+.p10
+{
+  padding: 10px;
+}
+
+.p20
+{
+  padding: 20px;
+}
+
+.mt-20
+{
+  margin-top: 20px;
+}
