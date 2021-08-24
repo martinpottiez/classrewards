@@ -1,1 +1,1 @@
-# classwrewards
+# classrewards
