@@ -9,6 +9,9 @@
         case "login":
           login();
         break;
+        case "logout":
+          logout();
+        break;
         default:
           showIndex();
       }
