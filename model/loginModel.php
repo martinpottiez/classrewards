@@ -1,8 +1,8 @@
 <?php
 
-require_once('model/ConfigModel.php');
+require_once('model/configModel.php');
 
-class loginModel extends ConfigModel{
+class loginModel extends configModel{
 
   public function getUser($mail, $pass){
     $db = $this->connect();

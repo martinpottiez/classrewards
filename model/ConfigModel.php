@@ -1,6 +1,6 @@
 <?php
 
-class ConfigModel {
+class configModel {
 
   protected function connect(){
     return new PDO('mysql:host=localhost;dbname=classroom;charset=utf8', 'root', 'root');
