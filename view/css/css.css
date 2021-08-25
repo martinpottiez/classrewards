@@ -7,6 +7,29 @@ html, body
   background-color: #eee;
 }
 
+/* Nav */
+
+nav ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a
+{
+  display: block;
+  padding: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+nav ul li a:hover
+{
+  padding-left: 18px;
+}
+
 /* Box */
 
 .page
@@ -37,7 +60,7 @@ html, body
 
 /* Forms */
 
-input
+input, .link-button
 {
   width: 100%;
   box-sizing: border-box;
@@ -49,7 +72,7 @@ input
   border: none;
 }
 
-input[type="submit"]
+input[type="submit"], .link-button
 {
   background-color: inherit;
   border: 2px solid #fff;
@@ -60,7 +83,7 @@ input[type="submit"]
   transition: all 0.2s ease;
 }
 
-input[type="submit"]:hover
+input[type="submit"]:hover, .link-button:hover
 {
   background-color: #fff;
   color: #7d52ea;
@@ -89,6 +112,54 @@ input[type="submit"]:hover
   flex-direction: column;
 }
 
+.fg-1
+{
+  flex-grow: 1;
+}
+
+/* Tables */
+
+table
+{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
+  -webkit-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
+}
+
+table tr
+{
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+table th:first-child
+{
+  border-radius: 8px 0 0 0;
+}
+
+table th:last-child
+{
+  border-radius: 0 8px 0 0;
+}
+
+table tr:last-child td:first-child
+{
+  border-radius: 0 0 0 8px;
+}
+
+table tr:last-child td:last-child
+{
+  border-radius: 0 0 8px 0;
+}
+
+table th, table td
+{
+  padding: 8px;
+}
+
 /* Titles */
 
 h2
@@ -113,6 +184,16 @@ h4
   font-size:14px;
 }
 
+.link-button
+{
+  display: block;
+  text-decoration: none;
+  line-height: 28px;
+  width: 90%;
+  text-align: center;
+  margin:auto;
+}
+
 /* Alignments */
 
 .center
@@ -127,9 +208,9 @@ h4
   background-color: #7d52ea;
 }
 
-.bg-darkPrimary
+.bg-lightPrimary
 {
-  background-color: #663399;
+  background-color: #8459eb;
 }
 
 /* Padding & Margins */
@@ -147,4 +228,9 @@ h4
 .mt-20
 {
   margin-top: 20px;
+}
+
+.mb-20
+{
+  margin-bottom: 20px;
 }

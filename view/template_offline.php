@@ -1,4 +1,5 @@
 <?php include('inc/head.php'); ?>
+      <div class="container alignc-start bg-primary nav-col p20">
         <div>
           <a href="">
             <img src="view/img/logo.png" alt="Logo de ClassRewards" class="logo"/>
@@ -13,7 +14,7 @@
           </form>
         </div>
       </div>
-      <div>
+      <div class="fg-1">
       </div>
     </div>
   </body>

@@ -7,4 +7,8 @@ class configModel {
     //return new PDO('mysql:host=martinuclassroom.mysql.db;dbname=martinuclassroom;charset=utf8', 'martinuclassroom', 'Aqwzsxpmol951');
   }
 
+  public function returnNumber($req){
+    return $req->rowCount();
+  }
+
 }

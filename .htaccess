@@ -3,6 +3,7 @@ Options -Indexes +FollowSymlinks -Multiviews
 RewriteEngine on
 
 RewriteRule ^index/(.*)$ index.php?action=$1 [L]
+RewriteRule ^classroom/(.*)$ classroom.php?id=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [L]

@@ -10,4 +10,3 @@
   </head>
   <body>
     <div class="container page">
-      <div class="container alignc-start bg-primary nav-col p20">

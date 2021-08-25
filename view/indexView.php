@@ -2,6 +2,8 @@
 
 if(isset($_SESSION['id'])){
   ob_start();?>
+  <?php include('inc/nav.php');?>
+  <?php $content_col = ob_get_clean(); ?>
   <div>
     <h2>Mes classes</h2>
   </div>

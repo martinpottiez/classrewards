@@ -1,14 +1,15 @@
 <?php include('inc/head.php'); ?>
-        <div>
+      <div class="container fd-column alignc-start bg-primary nav-col">
+        <div class="p20">
           <a href="">
             <img src="view/img/logo.png" alt="Logo de ClassRewards" class="logo"/>
           </a>
         </div>
-        <div class="mt-20">
-          <a href="index/logout" class="link-button">Déconnexion</a>
+        <div class="container fd-column mt-20 fg-1 justify-sb">
+          <?= $content_col ?>
         </div>
       </div>
-      <div class="container fd-column p20">
+      <div class="container fd-column fg-1 p20">
         <?= $content ?>
       </div>
     </div>
