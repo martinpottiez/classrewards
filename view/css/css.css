@@ -53,9 +53,30 @@ nav ul li a:hover
   background-color: #fff;
   padding: 25px;
   border-radius: 8px;
+}
+
+.shadow
+{
   box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
   -webkit-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
   -moz-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
+}
+
+.border-br
+{
+  border-radius: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.circle
+{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50%;
+  margin: auto;
 }
 
 /* Forms */
@@ -124,15 +145,13 @@ table
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
-  -webkit-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
-  -moz-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
 }
 
 table tr
 {
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 table th:first-child
@@ -157,7 +176,25 @@ table tr:last-child td:last-child
 
 table th, table td
 {
-  padding: 8px;
+  padding: 16px;
+  position: relative;
+}
+
+table td
+{
+  padding: 24px;
+}
+
+table tr td a
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 48px;
+  text-decoration: none;
+  color: #000;
 }
 
 /* Titles */
@@ -171,6 +208,25 @@ h2
 h4
 {
   margin: 0;
+}
+
+.title
+{
+  font-size: 75px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.smallTitle
+{
+  margin: -20px 0 0 0;
+  font-size: 25px;
+}
+
+.subtitle
+{
+  color: #909090;
+  font-size: 12px;
 }
 
 /* Links */
@@ -196,6 +252,11 @@ h4
 
 /* Alignments */
 
+.left
+{
+  text-align: left;
+}
+
 .center
 {
   text-align: center;
@@ -213,7 +274,32 @@ h4
   background-color: #8459eb;
 }
 
+.bg-white
+{
+  background-color: #fff;
+}
+
+.color-white
+{
+  color: #fff;
+}
+
+.color-primary
+{
+  color: #7d52ea;
+}
+
 /* Padding & Margins */
+
+.pl-15
+{
+  padding-left: 15px;
+}
+
+.pl-20
+{
+  padding-left: 20px;
+}
 
 .p10
 {
@@ -233,4 +319,37 @@ h4
 .mb-20
 {
   margin-bottom: 20px;
+}
+
+.mr-5
+{
+  margin-right: 5px;
+}
+
+.mr-20
+{
+  margin-right: 20px;
+}
+
+.ml-5
+{
+  margin-left: 5px;
+}
+
+.border-r8
+{
+  border-radius: 8px;
+}
+
+/*  Other */
+
+.br-8
+{
+  border-radius: 8px;
+}
+
+.student-icon
+{
+  font-size: 60px;
+  color: #fff;
 }

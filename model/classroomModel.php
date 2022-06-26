@@ -36,4 +36,13 @@ class classroomModel extends configModel {
     ));
     return $req;
   }
+
+  public function getStudent($id){
+    $db = $this->connect();
+    $req = $db->prepare("SELECT * FROM students WHERE id = :id");
+    $req->execute(array(
+      'id' => $id
+    ));
+    return $req;
+  }
 }

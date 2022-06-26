@@ -11,7 +11,7 @@ if(isset($_SESSION['id'])){
     <?php
     while($class = $allClasses->fetch()){
       echo '
-      <div class="card center container fd-column">
+      <div class="card center container fd-column shadow">
         <div>
           <h4>'.htmlspecialchars($class['name']).'</h4>
         </div>
