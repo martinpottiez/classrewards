@@ -1,6 +1,6 @@
 <?php include('inc/head.php'); ?>
-      <div class="container fd-column alignc-start bg-primary nav-col">
-        <div class="p20">
+      <div class="container alignc-start bg-primary nav-col p20">
+        <div class="center">
           <a href="">
             <img src="view/img/logo.png" alt="Logo de ClassRewards" class="logo"/>
           </a>
