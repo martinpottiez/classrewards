@@ -10,3 +10,10 @@
     }
     require("view/indexView.php");
   }
+
+  function showCreateClassroomForm() {
+    $rewrite = true;
+    if(isset($_SESSION['id'])) {
+      require('view/createclassroomform.php');
+    }
+  }

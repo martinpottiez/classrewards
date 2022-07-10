@@ -3,7 +3,7 @@
   require_once("model/loginModel.php");
 
   function login() {
-    if(isset($_POST['login'])) {
+    if(isset($_POST['login']) AND !isset($_SESSION['id'])) {
       if(isset($_POST['mail']) AND isset($_POST['password'])) {
         if(!empty($_POST['mail']) AND !(empty($_POST['password']))) {
           $mail = $_POST['mail'];
@@ -25,9 +25,9 @@
       } else {
         throw new Exception('Recharger votre page');
       }
+    } else {
+      header('Location: ../index2');
     }
-    $rewrite = true;
-    require("view/indexView.php");
   }
 
   function logout() {

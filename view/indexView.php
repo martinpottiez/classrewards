@@ -7,9 +7,18 @@ if(isset($_SESSION['id'])){
   <div>
     <h2>Mes classes</h2>
   </div>
-  <div class="container mt-20">
     <?php
-    while($class = $allClasses->fetch()){
+    if($allClasses->rowCount() == 0) {
+      echo'
+      <div class="container mt-20 justifyCenter">
+        <div class="center bg-white br-25 p20">
+          Vous n\'avez pas de classe rattachée à votre compte, créez-en une !
+          <a href="index/createClassroom" class="mt-20 bg-lightPrimary link-button">Créer une classe</a>
+        </div>';
+    } else {
+      echo'<div class="container mt-20">';
+    }
+    while($class = $allClasses->fetch()) {
       echo '
       <div class="card center container fd-column shadow">
         <div>
@@ -23,7 +32,17 @@ if(isset($_SESSION['id'])){
         </div>
       </div>';
     }
+    if($allClasses->rowCount() > 0) {
+      echo'<a href="index/createClassroom" class="addButton p20">+</a>';
+    }
     ?>
+
+  </div>
+  <div class="mt-20">
+    <h2>Classement</h2>
+  </div>
+  <div class="center bg-white br-25 p20 mt-20">
+    Les statistiques ne sont pas encore disponibles.
   </div>
 <?php $content = ob_get_clean();
   require('template_online.php');

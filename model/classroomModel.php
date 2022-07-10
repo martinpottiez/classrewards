@@ -45,4 +45,13 @@ class classroomModel extends configModel {
     ));
     return $req;
   }
+
+  public function createClassroom($name) {
+    $db = $this->connect();
+    $req = $db->prepare("INSERT INTO classes (teacher_id, name) VALUES (:teacher_id, :name)");
+    $req->execute(array(
+      'teacher_id' => $_SESSION['id'],
+      'name' => $name
+    ));
+  }
 }

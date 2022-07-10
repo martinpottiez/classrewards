@@ -1,5 +1,5 @@
-<?php
-  session_start();
+<?php session_start();
+
   require("controller/indexController.php");
   require("controller/loginController.php");
 
@@ -14,6 +14,9 @@
         break;
         case "register":
           register();
+        break;
+        case "createClassroom":
+          showCreateClassroomForm();
         break;
         default:
           showIndex();
