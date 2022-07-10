@@ -1,14 +1,11 @@
 <div>
   <nav>
     <ul>
-      <li class="bg-lightPrimary"><a href="">Mes Classes</a></li>
+      <li class="subtitleIcon mediumFont color-white"><i class="fas fa-home"></i><span><a href="index">Accueil</a></span></li>
       <?php if(isset($nav)){ echo $nav;} ?>
-      <li><a href="">Mon Compte</a></li>
-      <li class="bg-lightPrimary"><a href="">Paramètres</a></li>
-      <li></li>
     </ul>
   </nav>
 </div>
-<div class="mb-20">
-  <a href="index/logout" class="link-button">Déconnexion</a>
+<div class="mt-20 mb-20">
+  <a href="index/logout" class="bg-lightPrimary link-button">Déconnexion</a>
 </div>
