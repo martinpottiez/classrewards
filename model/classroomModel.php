@@ -54,4 +54,14 @@ class classroomModel extends configModel {
       'name' => $name
     ));
   }
+
+  public function addStudent($name, $surname, $class) {
+    $db = $this->connect();
+    $req = $db->prepare("INSERT INTO students (class_id, surname, name) VALUES (:class_id, :surname, :name)");
+    $req->execute(array(
+      'class_id' => $class,
+      'surname' => $surname,
+      'name' => $name
+    ));
+  }
 }

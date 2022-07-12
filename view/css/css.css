@@ -51,20 +51,6 @@ a {
   min-width: 220px;
 }
 
-.card
-{
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 8px;
-}
-
-.shadow
-{
-  box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
-  -webkit-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
-  -moz-box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.20);
-}
-
 .border-br
 {
   border-radius: 8px;
@@ -132,6 +118,14 @@ input[type="submit"]:hover, .link-button:hover
   align-content: start;
 }
 
+.aligncontentCenter {
+  align-content: center;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
 .fd-column
 {
   flex-direction: column;
@@ -140,6 +134,14 @@ input[type="submit"]:hover, .link-button:hover
 .fg-1
 {
   flex-grow: 1;
+}
+
+.fg-2 {
+  flex-grow: 2;
+}
+
+.fg-3 {
+  flex-grow: 3;
 }
 
 .nowrap {
@@ -166,29 +168,8 @@ table
 
 table tr
 {
-  background-color: #fff;
   border-bottom: 1px solid #eee;
   position: relative;
-}
-
-table th:first-child
-{
-  border-radius: 8px 0 0 0;
-}
-
-table th:last-child
-{
-  border-radius: 0 8px 0 0;
-}
-
-table tr:last-child td:first-child
-{
-  border-radius: 0 0 0 8px;
-}
-
-table tr:last-child td:last-child
-{
-  border-radius: 0 0 8px 0;
 }
 
 table th, table td
@@ -218,7 +199,7 @@ table tr td a
 
 h2
 {
-  color: #7d52ea;
+  color: #5D20D3;
   margin: 0;
 }
 
@@ -247,13 +228,16 @@ h4
 }
 
 .subtitleIcon {
-  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 600;
 }
 
 .subtitleIcon > i {
   margin-right: 10px;
+}
+
+.extraFont {
+  font-size: 40px;
 }
 
 .largeFont {
@@ -286,14 +270,23 @@ h4
 }
 
 .addButton {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   font-size: 40px;
   font-weight: bold;
-  line-height:40px;
+  line-height:30px;
   text-align:center;
   border-radius: 25px;
   border:2px solid #C9A2FF;
+}
+
+.lightCard {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightCard:hover {
+  background-color:#B384F4;
 }
 
 /* Alignments */
@@ -320,6 +313,10 @@ h4
 
 .bg-white {
   background-color: #fefefe;
+}
+
+.colorBlack {
+  color: #000;
 }
 
 .color-white {
@@ -361,6 +358,10 @@ h4
   margin-top: 20px;
 }
 
+.mb-10 {
+  margin-bottom: 10px
+}
+
 .mb-20
 {
   margin-bottom: 20px;
@@ -374,6 +375,10 @@ h4
 .mr-20
 {
   margin-right: 20px;
+}
+
+.mr-80 {
+  margin-right: 80px;
 }
 
 .ml-5

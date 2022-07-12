@@ -48,3 +48,27 @@
       header('Location: ../index');
     }
   }
+
+  function showAddStudent() {
+    $rewrite = true;
+    if(isset($_SESSION['id'])) {
+      require('view/createstudentform.php');
+    }
+  }
+
+  function addStudent() {
+    if(isset($_POST['addStudent'])) {
+      if(isset($_POST['name']) AND isset($_POST['surname']) AND !empty($_POST['name']) AND !empty($_POST['surname'])) {
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $class = $_GET['id'];
+        $classModel = new classroomModel();
+        $classModel->addStudent($name, $surname, $class);
+        header('Location: ../'.$_GET['id'].'');
+      } else {
+        throw new Exception("Veuillez remplir le nom et prénom de l'élève");
+      }
+    } else {
+      header('Location: ../index');
+    }
+  }

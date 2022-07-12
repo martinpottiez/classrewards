@@ -11,7 +11,16 @@
         default:
           try {
             if(isset($_GET['student'])){
-              showStudent($_GET['id'], $_GET['student']);
+              switch($_GET['student']) {
+                case "addstudent":
+                  showAddStudent();
+                break;
+                case "didaddstudent":
+                  addStudent();
+                break;
+                default:
+                  showStudent($_GET['id'], $_GET['student']);
+              }
             } else {
               showClassroom($_GET['id']);
             }

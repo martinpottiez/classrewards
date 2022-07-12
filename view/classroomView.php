@@ -1,8 +1,6 @@
-<?php $title = "ClassRewards - Ma Classe";
+<?php $title = "JollyClass - Ma Classe";
   ob_start();?>
-  <?php $nav = '
-  <li class="color-white p10"><i class="fas fa-school"></i> <b>'.htmlspecialchars($class['name']).'</b></li>
-  <li class="bg-lightPrimary pl-15"><a href="classroom/'.$_GET['id'].'">Élèves</a></li>';
+  <?php $nav = '';
   include('inc/nav.php'); ?>
 <?php $content_col = ob_get_clean();
 ob_start();
@@ -71,35 +69,54 @@ if(isset($_GET['student'])){
   <?php
 } else {?>
   <div>
-    <h2><?= htmlspecialchars($class['name']) ?></h2>
+    <h2><i class="fas fa-school color-primary mr-20"></i> <?= htmlspecialchars($class['name']) ?></h2>
   </div>
   <div class="container fd-column mt-20">
-    <div class="container">
-      <div class="bg-white border-br shadow mr-20 color-primary p10">
-        <a href=""><i class="fas fa-user-plus"></i> Ajouter un élève</a>
+    <div class="container gap20">
+      <div class="fg-1 bg-white br-25 p20">
+      </div>
+      <div class="fg-1 bg-white br-25 p20">
       </div>
     </div>
-    <table class="shadow mt-20">
-      <tr>
-        <th>Nom</th>
-        <th>Travail</th>
-        <th>Comportement</th>
-        <th>Total</th>
-        <th>Réserve</th>
-      </tr>
-      <?php
-      while($student = $allStudents->fetch()){
-        echo'
-        <tr>
-          <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.htmlspecialchars($student['name']).' '.htmlspecialchars($student['surname']).'</a></td>
-          <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'"></a></td>
-          <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'"></a></td>
-          <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.$student['points'].'</a></td>
-          <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.$student['saving'].'</a></td>
-        </tr>';
-      }
-      ?>
-    </table>
+    <div class="container mt-20 gap20">
+      <div class="bg-lightPrimary br-25 p20 fg-2">
+        <a href="classroom/<?=$_GET['id']?>/addstudent">
+          <div class="container subtitleIcon color-white alignItemsCenter gap20 p20 br-25 lightCard">
+            <i class="fas fa-plus-circle extraFont"></i>
+            <span class="mediumFont">Ajouter un élève</span>
+          </div>
+        </a>
+        <div class="container subtitleIcon color-white alignItemsCenter mt-20 gap20 p20 br-25 lightCard">
+          <i class="fas fa-cog extraFont"></i>
+          <span class="mediumFont">Paramètres de la classe</span>
+        </div>
+      </div>
+      <div class="bg-white br-25 fg-3">
+        <table>
+          <tr>
+            <th>Élève</th>
+            <th>Points</th>
+            <th>Bonus</th>
+            <th></th>
+          </tr>
+          <?php
+          while($student = $allStudents->fetch()){
+            echo'
+            <tr>
+              <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.htmlspecialchars($student['name']).' '.htmlspecialchars($student['surname']).'</a></td>
+              <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'"></a></td>
+              <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'"></a></td>
+              <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.$student['points'].'</a></td>
+              <td><a href="classroom/'.$_GET['id'].'/'.$student['id'].'">'.$student['saving'].'</a></td>
+            </tr>';
+          }
+          if($allStudents->rowCount() == 0) {
+            echo'<tr><td colspan="4">Aucun élève dans la classe</td></tr>';
+          }
+          ?>
+        </table>
+      </div>
+    </div>
   </div>
 <?php }
 $content = ob_get_clean();
