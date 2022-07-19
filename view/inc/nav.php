@@ -1,8 +1,9 @@
 <div>
   <nav>
     <ul>
-      <li class="subtitleIcon mediumFont color-white"><i class="fas fa-home"></i><span><a href="index">Accueil</a></span></li>
-      <?php if(isset($nav)){ echo $nav;} ?>
+      <?php if(isset($nav)){ echo $nav;
+      echo '<div class="p20"></div>';} ?>
+      <a href="index"><li class="subtitleIcon mediumFont color-white p10 br-25"><i class="fas fa-home"></i><span>Mes classes</span></li></a>
     </ul>
   </nav>
 </div>

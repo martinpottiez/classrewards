@@ -64,4 +64,14 @@ class classroomModel extends configModel {
       'name' => $name
     ));
   }
+
+  public function updateClassroom($values) {
+    $db = $this->connect();
+    $req = $db->prepare("UPDATE classes SET defaultPoints = :defaultPoints, points = :points WHERE id = :id");
+    $req->execute(array(
+      'defaultPoints' => $values[0],
+      'points' => $values[1],
+      'id' => $_GET['id']
+    ));
+  }
 }

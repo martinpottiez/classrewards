@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+nav ul li:hover {
+  background-color: #B384F4;
+  transition: all 0.2s ease;
+}
+
 /* Box */
 
 .page
@@ -48,13 +53,17 @@ a {
 .nav-col
 {
   width: 20%;
-  min-width: 220px;
+  min-width: 300px;
 }
 
 .border-br
 {
   border-radius: 8px;
   border-bottom: 1px solid #eee;
+}
+
+.borderLight {
+  border: 1px solid #C9A2FF;
 }
 
 .circle
@@ -236,6 +245,10 @@ h4
   margin-right: 10px;
 }
 
+.megaFont {
+  font-size: 128px;
+}
+
 .extraFont {
   font-size: 40px;
 }
@@ -246,6 +259,15 @@ h4
 
 .mediumFont {
   font-size:16px;
+}
+
+.mediumSpacing {
+  letter-spacing: 30px;
+  text-indent: 30px;
+}
+
+.semiBold {
+  font-weight: 600;
 }
 
 /* Links */
@@ -351,6 +373,10 @@ h4
 .p20
 {
   padding: 20px;
+}
+
+.mt-10 {
+  margin-top: 10px;
 }
 
 .mt-20

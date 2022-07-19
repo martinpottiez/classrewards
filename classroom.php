@@ -18,6 +18,12 @@
                 case "didaddstudent":
                   addStudent();
                 break;
+                case "settings":
+                  showSettings();
+                break;
+                case "dideditsettings":
+                  update();
+                break;
                 default:
                   showStudent($_GET['id'], $_GET['student']);
               }

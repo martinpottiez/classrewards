@@ -1,6 +1,7 @@
 <?php $title = "JollyClass";
-ob_start();?>
-<?php include('inc/nav.php');?>
+ob_start();
+$nav = '<a href="classroom/'.$_GET['id'].'"><li class="subtitleIcon mediumFont color-white p10 br-25"><i class="fas fa-school"></i></i><span>'.htmlspecialchars($class['name']).'</span></li></a>';?>
+<?php include('view/inc/nav.php');?>
 <?php $content_col = ob_get_clean(); ?>
 <div>
   <h2>Ajouter un élève</h2>
@@ -13,4 +14,4 @@ ob_start();?>
   </form>
 </div>
 <?php $content = ob_get_clean();
-require('template_online.php'); ?>
+require('view/template_online.php'); ?>

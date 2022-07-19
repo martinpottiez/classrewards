@@ -9,7 +9,7 @@
           <?= $content_col ?>
         </div>
       </div>
-      <div class="container fd-column fg-1 p20">
+      <div class="container fd-column fg-1 p20 nowrap">
         <?= $content ?>
       </div>
     </div>

@@ -14,6 +14,6 @@
   function showCreateClassroomForm() {
     $rewrite = true;
     if(isset($_SESSION['id'])) {
-      require('view/createclassroomform.php');
+      require('view/classroom/createclassroomform.php');
     }
   }

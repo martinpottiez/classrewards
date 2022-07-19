@@ -9,7 +9,7 @@
       $class = $getClass->fetch();
       $allStudents = $classModel->getStudents($id);
       $rewrite = true;
-      require('view/classroomView.php');
+      require('view/classroom/classroomView.php');
     } else {
       // Si on accède à une classe dont nous sommes pas le prof
       header('Location: ../index');
@@ -23,7 +23,7 @@
       $class = $getClass->fetch();
       $getStudent = $classModel->getStudent($id);
       $rewrite = true;
-      require('view/classroomView.php');
+      require('view/classroom/classroomView.php');
     } else {
       // Si on accède à une classe dont nous sommes pas le prof
       header('Location: ../index');
@@ -52,7 +52,28 @@
   function showAddStudent() {
     $rewrite = true;
     if(isset($_SESSION['id'])) {
-      require('view/createstudentform.php');
+      $classModel = new classroomModel();
+      if($classModel->isTeacher($_GET['id'])) {
+        $getClass = $classModel->getClass($_GET['id']);
+        $class = $getClass->fetch();
+        require('view/classroom/createstudentform.php');
+      } else {
+        header('Location: ../../index');
+      }
+    }
+  }
+
+  function showSettings() {
+    $rewrite = true;
+    if(isset($_SESSION['id'])) {
+      $classModel = new classroomModel();
+      if($classModel->isTeacher($_GET['id'])) {
+        $getClass = $classModel->getClass($_GET['id']);
+        $class = $getClass->fetch();
+        require('view/classroom/settings.php');
+      } else {
+        header('Location: ../../index');
+      }
     }
   }
 
@@ -68,6 +89,29 @@
       } else {
         throw new Exception("Veuillez remplir le nom et prénom de l'élève");
       }
+    } else {
+      header('Location: ../index');
+    }
+  }
+
+  function update() {
+    if(isset($_POST['save'])) {
+      $classModel = new classroomModel();
+      $getClass = $classModel->getClass($_GET['id']);
+      $class = $getClass->fetch();
+      if(isset($_POST['defaultPoints']) AND !empty($_POST['defaultPoints'])) {
+        $defaultPoints = $_POST['defaultPoints'];
+      } else {
+        $defaultPoints = $class['defaultPoints'];
+      }
+      if(isset($_POST['points']) AND !empty($_POST['points'])) {
+        $points = $_POST['points'];
+      } else {
+        $points = $class['points'];
+      }
+      $values = array($defaultPoints, $points);
+      $classModel->updateClassroom($values);
+      header('Location: ../'.$_GET['id'].'');
     } else {
       header('Location: ../index');
     }
